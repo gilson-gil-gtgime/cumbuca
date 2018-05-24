@@ -1,1 +1,10 @@
-com/cumbuco/web/controller/HomeController.class
+com/cumbuca/web/entity/Food.class
+com/cumbuca/web/dao/impl/RecipeDAOImpl.class
+com/cumbuca/web/controller/RecipeController.class
+com/cumbuca/web/dao/FoodDAO.class
+com/cumbuca/web/controller/HomeController.class
+com/cumbuca/web/dao/RecipeDAO.class
+com/cumbuca/web/dao/GenericDAO.class
+com/cumbuca/web/dao/impl/FoodDAOImpl.class
+com/cumbuca/web/dao/impl/GenericDAOImpl.class
+com/cumbuca/web/entity/Recipe.class
