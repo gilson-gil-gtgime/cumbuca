@@ -2,6 +2,7 @@ package com.cumbuca.web.entity;
 
 public class RecipeForm {
 	
+	private int id;
 	private String name;
 	private String foods;
 
@@ -13,6 +14,14 @@ public class RecipeForm {
 		super();
 		this.name = name;
 		this.foods = foods;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

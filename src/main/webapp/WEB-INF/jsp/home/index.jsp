@@ -6,6 +6,6 @@
 
 <tags:template title="Cadastro de Receitas">
 
-	<h1>Olá Mundo!</h1>
+	<h1>Bem vindo ao Admin Cumbuca</h1>
 
 </tags:template>
