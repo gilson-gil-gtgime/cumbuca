@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -25,6 +26,9 @@ public class Food {
 	
 	@ManyToMany(mappedBy="foods")
 	private List<Recipe> recipes;
+	
+	@OneToMany(mappedBy="food")
+	private List<FoodRecord> records;
 
 	public Food() {
 		super();
