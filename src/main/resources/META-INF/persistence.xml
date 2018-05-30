@@ -15,10 +15,13 @@
 			<property name="javax.persistence.jdbc.driver"
 				value="oracle.jdbc.OracleDriver" />
 			<property name="javax.persistence.jdbc.user" value="gil" />
+			<!-- <property name="javax.persistence.jdbc.user" value="admin" /> -->
 			<property name="javax.persistence.jdbc.password"
 				value="qwerty123" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<!-- <property name="javax.persistence.jdbc.url"
+				value="jdbc:oracle:thin:@oracle.c5flpqxdesrs.us-east-1.rds.amazonaws.com:1521:orcl" /> -->
 
 			<!-- Connection Pool -->
 			<!-- Número mínimo de conexões -->

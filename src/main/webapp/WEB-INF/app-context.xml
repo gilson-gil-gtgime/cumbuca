@@ -15,7 +15,9 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.spri
   class="org.springframework.jdbc.datasource.DriverManagerDataSource">
   <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
   <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+  <!-- <property name="url" value="jdbc:oracle:thin:@oracle.c5flpqxdesrs.us-east-1.rds.amazonaws.com:1521:orcl" /> -->
   <property name="username" value="gil" />
+  <!-- <property name="username" value="admin" /> -->
   <property name="password" value="qwerty123" />
 </bean>
 <bean id="entityManagerFactory"
