@@ -9,6 +9,7 @@ import com.cumbuca.web.entity.Food;
 
 @Repository
 public class FoodDAOImpl extends GenericDAOImpl<Food, Integer> implements FoodDAO{
+	
 	public Food getFoodWithName(String name) {
 		@SuppressWarnings("unchecked")
 		List<Food> foods = em.createQuery("SELECT f FROM Food f WHERE f.name = :name")

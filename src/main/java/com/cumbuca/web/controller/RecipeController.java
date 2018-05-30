@@ -3,7 +3,6 @@ package com.cumbuca.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +14,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cumbuca.web.dao.FoodDAO;
 import com.cumbuca.web.dao.RecipeDAO;
+import com.cumbuca.web.dao.impl.FoodDAOImpl;
+import com.cumbuca.web.dao.impl.RecipeDAOImpl;
 import com.cumbuca.web.entity.Food;
 import com.cumbuca.web.entity.Recipe;
 import com.cumbuca.web.entity.RecipeForm;
@@ -23,11 +24,15 @@ import com.cumbuca.web.entity.RecipeForm;
 @RequestMapping("recipe")
 public class RecipeController {
 	
-	@Autowired
 	private RecipeDAO dao;
 	
-	@Autowired
 	private FoodDAO foodDao;
+
+	public RecipeController() {
+		super();
+		this.dao = new RecipeDAOImpl();
+		this.foodDao = new FoodDAOImpl();
+	}
 
 	@GetMapping("register")
 	public String openForm(RecipeForm recipeForm) {

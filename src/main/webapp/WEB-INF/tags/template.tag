@@ -19,15 +19,15 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link" href='<c:url value="/"/>'>Home</a>
+	        <a class="nav-link" href='<c:url value="/web/"/>'>Home</a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Receitas
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href='<c:url value="/recipe/register"/>'>Cadastrar</a>
-	          <a class="dropdown-item" href='<c:url value="/recipe/list"/>'>Listar</a>
+	          <a class="dropdown-item" href='<c:url value="/web/recipe/register"/>'>Cadastrar</a>
+	          <a class="dropdown-item" href='<c:url value="/web/recipe/list"/>'>Listar</a>
 	        </div>
 	      </li>
 	    </ul>

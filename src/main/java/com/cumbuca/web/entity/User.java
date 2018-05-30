@@ -1,18 +1,16 @@
 package com.cumbuca.web.entity;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="tb_users")
+@Table(name="tb_users", uniqueConstraints={@UniqueConstraint(columnNames={"ds_email", "nm_username"})})
 public class User {
 	@Id
 	@SequenceGenerator(name="user", sequenceName="sq_tb_users", allocationSize=1)
@@ -20,14 +18,11 @@ public class User {
 	@Column(name="id_user")
 	private int id;
 	
-	@Column(name="ds_email", nullable=false)
+	@Column(name="ds_email", nullable=false, length=100, unique=true)
 	private String email;
 	
-	@Column(name="nm_username", nullable=false)
+	@Column(name="nm_username", nullable=false, length=30, unique=true)
 	private String username;
-	
-	@OneToMany(mappedBy="user")
-	private List<FoodRecord> foods;
 	
 	public User() {
 		super();
@@ -42,6 +37,10 @@ public class User {
 
 	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getEmail() {
@@ -58,13 +57,5 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
-
-	public List<FoodRecord> getFoods() {
-		return foods;
-	}
-
-	public void setFoods(List<FoodRecord> foods) {
-		this.foods = foods;
 	}
 }

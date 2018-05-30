@@ -40,6 +40,12 @@ public class Recipe {
 		this.id = id;
 		this.name = name;
 	}
+	
+	public Recipe(String name, List<Food> foods) {
+		super();
+		this.name = name;
+		this.foods = foods;
+	}
 
 	public int getId() {
 		return id;
@@ -68,4 +74,8 @@ public class Recipe {
 	public String commaSeparatedFoods() {
 		return this.foods.stream().map(Food::getName).collect(Collectors.joining(", "));
 	}
+	
+	public int compareTo(Recipe compareRecipe) {
+		return this.name.compareTo(compareRecipe.name);
+	}	
 }

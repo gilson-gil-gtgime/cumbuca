@@ -3,24 +3,19 @@ package com.cumbuca.web.entity;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="tb_food_record")
 public class FoodRecord {
 
-	@Id
-	@SequenceGenerator(name="food_record", sequenceName="sq_tb_food_record", allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="id_food_record")
-	private int id_food_record;
+	@EmbeddedId
+	@Column(name="id_food_record")
+	private FoodRecordIdentifier id_food_record;
 	
 	@ManyToOne
     @JoinColumn(name="id_user", nullable=false)
@@ -42,14 +37,23 @@ public class FoodRecord {
 	public FoodRecord() {
 		super();
 	}
-
+	
 	public FoodRecord(User user, Food food, int total, String unit, Date expire) {
 		super();
+		this.id_food_record = new FoodRecordIdentifier(user.getId(), food.getId());
 		this.user = user;
 		this.food = food;
 		this.total = total;
 		this.unit = unit;
 		this.expire = expire;
+	}
+
+	public FoodRecordIdentifier getId() {
+		return this.id_food_record;
+	}
+	
+	public void setId(FoodRecordIdentifier id) {
+		this.id_food_record = id;
 	}
 
 	public User getUser() {
